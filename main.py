@@ -94,8 +94,9 @@ def list_tasks(status_filter=None):
         
 
 while True:
+    # add/update/delete/mark-(in-progress/done/todo)/list/list done/todo/in-progress
     # Надо будет сделать функцию для вывода комманд, а то это пиздец
-    user_command = input("""add/update/delete/mark-(in-progress/done/todo)/list/list done/todo/in-progress: """)
+    user_command = input("task-cli: ")
     splited_user_command = user_command.split()
     if splited_user_command[0] == "add":
         desc = splited_user_command[1:]
@@ -120,7 +121,7 @@ while True:
         else:
             list_tasks()
     else:
-        print("Такой команды нет")
+        print("Такой команды нет. Введи help, чтобы посмотреть список команд.")
 
 # Я бы мб этот код доработал исключениями, а то он вроде откисает пиздец от всего 
 # И начал бы двигаться к todo list api, ну короче, хочу личные заметки через сервак с впном,
